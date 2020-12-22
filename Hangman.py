@@ -1,14 +1,16 @@
 #User is asked to guess a letter, if it is part of the word,
 #it is added, if not a letter is added to HANGMAN
-
-from random_word import RandomWords
+import random
 def split(word):
     return [char for char in word]
-def checkword(guess):
+def checkword(guess):   #Function to check whether guess is correct, returns false if incorrect
     if guess == rand:
         print("You Win!")
         exit()
     global j, f
+    if guess in a:
+        print("You guessed this already! Try again!")
+        return None
     if guess in word:
         print("Your guess is correct!")
         x = word.index(guess)
@@ -17,11 +19,9 @@ def checkword(guess):
     elif not(guess in word):
         j += 1
         print("Your guess was incorrect\n Tries remaining: H" + "".join(trial[1:f]))
-        return False
-lines = open(
+        return False    #
 
-r = RandomWords()
-rand = "genius"
+rand = random.choice(open("wordlist.txt").readlines())  #Picks random word from wordlist
 trial = split("HANGMAN")
 word = split(rand)
 size = len(word)
