@@ -18,6 +18,7 @@ def checkword(guess):
         j += 1
         print("Your guess was incorrect\n Tries remaining: H" + "".join(trial[1:f]))
         return False
+lines = open(
 
 r = RandomWords()
 rand = "genius"
